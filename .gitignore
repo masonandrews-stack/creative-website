@@ -3,6 +3,7 @@ dist/
 *.local
 .DS_Store
 .meadow-edit/
+.nano-qa/
 *.docx
 .env
 .env.*
