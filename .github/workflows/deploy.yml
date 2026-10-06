@@ -1,4 +1,4 @@
-name: Deploy Meadow to GitHub Pages
+name: Deploy Nano Banana to GitHub Pages
 
 on:
   push:

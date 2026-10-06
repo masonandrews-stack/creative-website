@@ -45,3 +45,5 @@ Vite uses `/creative-website/` as the base path. All product and art images reso
 ## Artwork
 
 `public/shirts/front.png` and `back.png` are the supplied product references. `public/art/dream-01.png` through `dream-06.png` are original generated print assets. The permanent banana mark is based on the supplied upper-back mark. These are independent concept assets rather than official Google merchandise.
+
+The six print assets and transparent banana extraction were created with the built-in image generation tool. Their complete prompts are recorded in [ARTWORK_PROMPTS.md](ARTWORK_PROMPTS.md).
