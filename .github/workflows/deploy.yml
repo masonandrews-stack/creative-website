@@ -1,4 +1,4 @@
-name: Deploy Nano Banana to GitHub Pages
+name: Deploy BackSupport to GitHub Pages
 
 on:
   push:

@@ -1,28 +1,33 @@
-# Nano Banana ONE/ONE
+# BackSupport
 
-An interactive wearable-art ecommerce concept built with React 19, TypeScript, Vite, Tailwind CSS v4, and Framer Motion. The provided cream shirt photos are paired with six original Dream Machines print graphics.
+A student marketing venture website for a B2B furniture-retrofit concept. BackSupport helps universities and institutions explore extending the useful life of existing chairs and equipment, starting with an add-on back support overlay.
 
-## Experience
+## Website
 
-- Front/back product views with subtle pointer tilt and motion.
-- Custom prompt generation, character counter, six style treatments, and $49 pricing.
-- Animated random dice generation, keep/reroll actions, and $39 pricing.
-- Mobile swipe and button controls for variations.
-- Six selectable weekly designs, a persisted countdown, archive reveals, and fictional community posts.
-- Sizes S through XXL, prototype orders, cart persistence, retired visual variants, and downloadable generation certificates.
+https://masonandrews-stack.github.io/creative-website/
 
-Generation selects from local artwork samples and visual treatments; there is no live image-generation API. Orders, certificates, scarcity, community posts, and counters are simulated. No payment or physical order is processed. Saved orders and drop timing use this browser's local storage; retirement is local to that collection.
+## Features
 
-## Local development
+- Responsive institutional marketing website with section navigation and a mobile menu.
+- Three selectable retrofit concepts and original SVG chair illustrations.
+- Interactive savings estimator with editable chair counts and per-chair costs. All amounts are illustrative; the calculator handles zero costs and scenarios where upgrades cost more.
+- Pilot inquiry form that prepares an email for review in the visitor's email app. No backend submission or data storage.
+- Expandable FAQs explaining fit, safety, pricing assumptions, and the concept-stage status of the venture.
 
-Use Node.js 22.12 or newer (Node 24 is used in deployment).
+The site does not claim certified ergonomic or medical benefits, actual customer results, established pricing, or available inventory. Costs and feasibility require assessment. Contact inquiries go to Mason Andrews at the existing student email address.
+
+## Development
+
+Use Node.js 24 (matching deployment), or a newer supported version.
 
 ```sh
-npm ci
+npm ci --include=dev
 npm run dev
 ```
 
-## Validation and production preview
+The Vite base path is `/creative-website/`.
+
+## Validation
 
 ```sh
 npm run lint
@@ -30,20 +35,14 @@ npm run build
 npm run preview
 ```
 
-Open the preview at `http://localhost:4173/creative-website/`.
+The preview serves the production build at port 4173, under `/creative-website/`.
 
-## GitHub Pages
+Browser checks: verify navigation at mobile and desktop sizes; switch each retrofit concept with mouse and keyboard; change all calculator inputs; check zero and negative savings scenarios; prepare an inquiry and inspect the generated mailto link; expand FAQs; confirm all images/illustrations display and there is no horizontal page overflow.
 
-Repository: https://github.com/masonandrews-stack/creative-website
+## Deployment
 
-Website: https://masonandrews-stack.github.io/creative-website/
+The existing GitHub Actions workflow runs lint/build on pushes to `main`, then deploys `dist` to GitHub Pages. Repository Settings → Pages must use **GitHub Actions** as its source.
 
-The deployment workflow builds and checks the project on each push to `main`, then publishes `dist` to GitHub Pages. In repository Settings → Pages, choose **GitHub Actions** as the source. The workflow can also be rerun manually from the Actions tab.
+## Assets
 
-Vite uses `/creative-website/` as the base path. All product and art images resolve through `import.meta.env.BASE_URL`, and the favicon uses `%BASE_URL%`.
-
-## Artwork
-
-`public/shirts/front.png` and `back.png` are the supplied product references. `public/art/dream-01.png` through `dream-06.png` are original generated print assets. The permanent banana mark is based on the supplied upper-back mark. These are independent concept assets rather than official Google merchandise.
-
-The six print assets and transparent banana extraction were created with the built-in image generation tool. Their complete prompts are recorded in [ARTWORK_PROMPTS.md](ARTWORK_PROMPTS.md).
+Current chair illustrations are local inline SVG concept diagrams. Typography uses Google Fonts with local system fallbacks. Artwork from the previous interactive storefront remains in `public/` but is not used by the BackSupport site; its historical prompts remain in `ARTWORK_PROMPTS.md`.
