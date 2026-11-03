@@ -1,0 +1,39 @@
+name: Deploy Mission 2 Studio
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Mission_2_3D_Studio/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Mission_2_3D_Studio/package-lock.json
+      - run: npm ci
+        working-directory: Mission_2_3D_Studio
+      - run: npm run build
+        working-directory: Mission_2_3D_Studio
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: Mission_2_3D_Studio/dist
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
