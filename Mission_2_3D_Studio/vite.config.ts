@@ -1,3 +1,2 @@
 import {defineConfig} from 'vite'; import react from '@vitejs/plugin-react';
-export default defineConfig({base:'/venture-3d-studio/',plugins:[react()]});
-
+export default defineConfig({base:'/creative-website/',plugins:[react()]});
